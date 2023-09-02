@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="robot1">
+  
+  <xacro:include filename="$(find test)/urdf/plugin.gazebo" />
+
+  <link name="robot1_footprint">
+  </link>
+
+
+  <!-- Chassis-->
+
+  <link name="chassis">
+    <inertial>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+      <mass value="3.0"/>
+      <inertia ixx="0.1" ixy="0.0" ixz="0.0" iyy="0.1" iyz="0.0" izz="0.1"/>
+    </inertial>
+    <visual name="">
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+      <geometry>
+        <box size="1.0 2.0 1.0"/>
+      </geometry>
+      <material name="">
+        <color rgba="1.0 1.0 1.0 1.0"/>
+        <texture filename=""/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+      <geometry>
+        <box size="1.0 2.0 1.0"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="chassis_joint" type="fixed">
+    <parent link="robot1_footprint"/>
+    <child link="chassis"/>
+  </joint>
+
+  <!-- righ wheel-->
+
+  <link name="right_wheel">
+    <inertial>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+      <mass value="0.5"/>
+      <inertia ixx="0.1" ixy="0.0" ixz="0.0" iyy="0.1" iyz="0.0" izz="0.1"/>
+    </inertial>
+    <visual name="">
+    <origin xyz="0.0 0.0 0.0" rpy="0.0 1.5708 0.0"/>
+      <geometry>
+        <cylinder radius="0.2" length="0.3"/> 
+      </geometry>
+      <material name="">
+        <color rgba="0.0 0.0 0.0 0.0"/>
+        <texture filename=""/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 1.5708 0.0"/>
+      <geometry>
+        <cylinder radius="0.2" length="0.3"/> 
+      </geometry>
+    </collision>
+  </link>
+  <joint name="right_wheel_joint" type="continuous">
+    <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+    <parent link="chassis"/>
+    <child link="right_wheel"/>
+    <axis xyz="0.0 0.0 0.0"/>
+  </joint>
+  <!-- left wheel-->
+   
+  <link name="left_wheel">
+    <inertial>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+      <mass value="0.5"/>
+      <inertia ixx="0.1" ixy="0.0" ixz="0.0" iyy="0.1" iyz="0.0" izz="0.1"/>
+    </inertial>
+    <visual name="">
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 1.5708 0.0"/>
+      <geometry>
+        <cylinder radius="0.2" length="0.3"/> 
+      </geometry>
+      <material name="">
+        <color rgba="0.0 0.0 0.0 0.0"/>
+        <texture filename=""/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 1.5708 0.0"/>
+      <geometry>
+        <cylinder radius="0.2" length="0.3"/> 
+      </geometry>
+    </collision>
+  </link>
+  <joint name="left_wheel_joint" type="continuous">
+    <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+    <parent link="chassis"/>
+    <child link="left_wheel"/>
+    <axis xyz="0.0 0.0 0.0"/>
+  </joint>
+  <!-- caster wheel-->
+
+  <!-- lidar -->
+
+  <link name="lidar">
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="package://test/meshes/hokuyo.dae"/>
+      </geometry>
+    </collision>
+
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="package://test/meshes/hokuyo.dae"/>
+      </geometry>
+    </visual>
+
+    <inertial>
+      <mass value="1e-5" />
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <inertia ixx="1e-6" ixy="0" ixz="0" iyy="1e-6" iyz="0" izz="1e-6" />
+    </inertial>
+  </link>
+
+  <joint name="lidar_joint" type="fixed">
+    <axis xyz="0.5 0.1 1.2" />
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <parent link="chassis"/>
+    <child link="lidar"/>
+  </joint>
+
+
+</robot>
