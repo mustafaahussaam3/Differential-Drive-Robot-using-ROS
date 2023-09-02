@@ -1,8 +1,0 @@
-prefix=/home/mustaf/Documents/ROS_Course/Workspace/urdf_description/install
-
-Name: robot1
-Description: Description of robot1
-Version: 0.0.0
-Cflags: 
-Libs: -L${prefix}/lib 
-Requires: 
