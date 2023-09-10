@@ -1,9 +1,6 @@
 <?xml version="1.0"?>
 <launch>
-  <group ns="turtlesim1">
   <node name="move_robot_node" pkg="test" type="move_robot_node" output="screen" />
-</group>
-  <remap from="/cmd_vel" to="/turtlesim1/cmd_vel"/>
 
   <!-- Custom gazebo arguements -->
   <arg name="world" default="empty"/> 
