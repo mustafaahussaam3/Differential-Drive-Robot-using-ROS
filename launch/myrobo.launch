@@ -1,6 +1,7 @@
 <?xml version="1.0"?>
 <launch>
-  <node name="move_robot_node" pkg="test" type="move_robot_node" output="screen" />
+  <node name="move_robot_node" pkg="test" type="robo" output="screen" />  
+    #type take the exec 
 
   <!-- Custom gazebo arguements -->
   <arg name="world" default="empty"/> 
