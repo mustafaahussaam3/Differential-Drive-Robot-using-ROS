@@ -1,12 +1,13 @@
 <?xml version="1.0"?>
 <launch>
   <node name="move_robot_node" pkg="test" type="robo" output="screen" />  
-    #type take the exec 
+    <!-- #type take the exec  -->
 
   <!-- Custom gazebo arguements -->
   <arg name="world" default="empty"/> 
   <arg name="paused" default="false"/>
-  <arg name="use_sim_time" default="true"/>
+    <!-- it must be true to make the robot synchronized with gazebo -->
+  <arg name="use_sim_time" default="true"/> 
   <arg name="gui" default="true"/>
   <arg name="headless" default="false"/>
   <arg name="debug" default="false"/>
@@ -23,7 +24,8 @@
     <arg name="headless" value="$(arg headless)"/>
     <arg name="verbose" value="true"/>
   </include>
- 
+    <!-- launch gazebo from file pkg gazebo_ros file(gazebo.launch.py) then running our robot using spawn in gazebo pkg and echo from robot_describption
+      that the urdf publish on the robot_state_publisher using robot discription topic -->
   <param command="$(find xacro)/xacro $(find test)/urdf/robot1.xacro" name="robot_description"/>
   <node args="-param robot_description -urdf -model robot1" name="spawn_urdf" pkg="gazebo_ros" type="spawn_model"/>
 

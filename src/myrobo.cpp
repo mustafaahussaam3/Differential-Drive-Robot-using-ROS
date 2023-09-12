@@ -10,7 +10,7 @@ ros::NodeHandle nh;
 ros::Publisher pub = nh.advertise<geometry_msgs::Twist>("cmd_vel", 1000);
 ros::Rate loop_rate(2);
 geometry_msgs::Twist vel ;
-vel.linear.y = 1;
+//vel.linear.y = -20;
   
   while (ros::ok()){
 
