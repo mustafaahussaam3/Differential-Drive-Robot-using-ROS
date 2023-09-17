@@ -1,12 +1,12 @@
 <?xml version="1.0"?>
 <launch>
   <node name="move_robot_node" pkg="test" type="robo" output="screen" />  
-    <!-- #type take the exec  -->
+    <!-- #type take the exec name in case of c++  -->
 
   <!-- Custom gazebo arguements -->
   <arg name="world" default="empty"/> 
   <arg name="paused" default="false"/>
-    <!-- it must be true to make the robot synchronized with gazebo -->
+    <!-- it must be true to make the robot synchronized with gazebo "user_sim_time"-->
   <arg name="use_sim_time" default="true"/> 
   <arg name="gui" default="true"/>
   <arg name="headless" default="false"/>
@@ -23,15 +23,20 @@
     <arg name="use_sim_time" value="$(arg use_sim_time)"/>
     <arg name="headless" value="$(arg headless)"/>
     <arg name="verbose" value="true"/>
+    <!-- verbose will provide you with further informations in case there is error in launching files-->
   </include>
     <!-- launch gazebo from file pkg gazebo_ros file(gazebo.launch.py) then running our robot using spawn in gazebo pkg and echo from robot_describption
       that the urdf publish on the robot_state_publisher using robot discription topic -->
+    <!-- if the file not .xacro file you will need to change command ="$(find<>)/<  > "-->
   <param command="$(find xacro)/xacro $(find test)/urdf/robot1.xacro" name="robot_description"/>
   <node args="-param robot_description -urdf -model robot1" name="spawn_urdf" pkg="gazebo_ros" type="spawn_model"/>
+  <!-- type spawn model is a file that is reponsible for taking the xacro file and put our robot from it to gazebo -->
+  <!-- arg needs in gazebo -parm <topic name> -model <robotname> -->
 
   <!-- Send fake joint values-->
   <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher">
     <param name="use_gui" value="false"/>
+    <!-- if true we will have a fake joints that we can test our robot using it, it will send it's data to /joint state topic that will give to robot-state-publisher-->
   </node>
 
     <!-- Send robot states to tf -->

@@ -88,12 +88,12 @@
       <heading_deg>0</heading_deg>
     </spherical_coordinates>
     <model name='robot1_world'>
-      <pose>1.10096 -2.15006 0 0 -0 0</pose>
-      <link name='Wall_8'>
-        <collision name='Wall_8_Collision'>
+      <pose>2.47098 -0.826872 0 0 -0 0</pose>
+      <link name='Wall_7'>
+        <collision name='Wall_7_Collision'>
           <geometry>
             <box>
-              <size>11.75 0.15 2.5</size>
+              <size>8.25 0.15 2.5</size>
             </box>
           </geometry>
           <pose>0 0 1.25 0 -0 0</pose>
@@ -111,17 +111,17 @@
             </friction>
           </surface>
         </collision>
-        <visual name='Wall_8_Visual'>
+        <visual name='Wall_7_Visual'>
           <pose>0 0 1.25 0 -0 0</pose>
           <geometry>
             <box>
-              <size>11.75 0.15 2.5</size>
+              <size>8.25 0.15 2.5</size>
             </box>
           </geometry>
           <material>
             <script>
               <uri>file://media/materials/scripts/gazebo.material</uri>
-              <name>Gazebo/Bricks</name>
+              <name>Gazebo/Wood</name>
             </script>
             <ambient>1 1 1 1</ambient>
           </material>
@@ -129,7 +129,7 @@
             <layer>0</layer>
           </meta>
         </visual>
-        <pose>0 -2.61125 0 0 -0 0</pose>
+        <pose>2.39598 -0 0 0 -0 -1.5708</pose>
         <self_collide>0</self_collide>
         <enable_wind>0</enable_wind>
         <kinematic>0</kinematic>
@@ -137,10 +137,10 @@
       <static>1</static>
     </model>
     <state world_name='default'>
-      <sim_time>106 558000000</sim_time>
-      <real_time>110 765639449</real_time>
-      <wall_time>1693744329 384649403</wall_time>
-      <iterations>106558</iterations>
+      <sim_time>37 87000000</sim_time>
+      <real_time>39 372666972</real_time>
+      <wall_time>1694964685 593333158</wall_time>
+      <iterations>37087</iterations>
       <model name='ground_plane'>
         <pose>0 0 0 0 -0 0</pose>
         <scale>1 1 1</scale>
@@ -152,10 +152,10 @@
         </link>
       </model>
       <model name='robot1_world'>
-        <pose>1.10096 -2.15006 0 0 -0 0</pose>
+        <pose>2.47098 -0.826872 0 0 -0 0</pose>
         <scale>1 1 1</scale>
-        <link name='Wall_8'>
-          <pose>1.10096 -4.76131 0 0 -0 0</pose>
+        <link name='Wall_7'>
+          <pose>4.86696 -0.826872 0 0 0 -1.5708</pose>
           <velocity>0 0 0 0 -0 0</velocity>
           <acceleration>0 0 0 0 -0 0</acceleration>
           <wrench>0 0 0 0 -0 0</wrench>
@@ -167,7 +167,7 @@
     </state>
     <gui fullscreen='0'>
       <camera name='user_camera'>
-        <pose>44.5614 -39.633 22.8937 0 0.275643 2.35619</pose>
+        <pose>36.1618 -51.3469 20.0342 0 0.275643 2.35619</pose>
         <view_controller>orbit</view_controller>
         <projection_type>perspective</projection_type>
       </camera>

@@ -18,23 +18,7 @@
     </plugin>
   </gazebo> -->
 
-<!-- <gazebo reference = "left_wheel_joint">
-  <material>
-    Gazebo/Green
-  </material>
-</gazebo>
 
-<gazebo reference = "base_footprint">
-  <material>
-    Gazebo/Blue
-  </material>
-</gazebo>
-
-<gazebo reference = "chassis">
-  <material>
-    Gazebo/Orange
-  </material>
-</gazebo> -->
 
   <gazebo>
     <plugin name="differential_drive_controller" filename="libgazebo_ros_diff_drive.so">
@@ -65,29 +49,37 @@
   <!-- hokuyo -->
   <gazebo reference="lidar">
     <sensor type="ray" name="head_hokuyo_sensor">
+      <!-- the origin of the sensor is the origin of the link -->
       <pose>0 0 0 0 0 0</pose>
       <visualize>true</visualize>  
-      <update_rate>40</update_rate>
+      <!-- the update time of the sensor within one second -->
+      <update_rate>10</update_rate>
+      <!-- ray tag specify the parameters for the virtual ray sensor-->
       <ray>
+        <!-- Scan -->
         <scan>
+          <!-- specifying the way of scan either horizontal or vertical-->
           <horizontal>
-            <samples>780</samples>
+            <samples>360</samples>
             <resolution>1</resolution>
             <min_angle>-1.570796</min_angle>
             <max_angle>1.570796</max_angle>
           </horizontal>
         </scan>
+        <!-- Range -->
         <range>
           <min>0.10</min>
-          <max>30.0</max>
+          <max>10.0</max>
           <resolution>0.01</resolution>
         </range>
+        <!-- Noise-->
         <noise>
           <type>gaussian</type>
           <mean>0.0</mean>
           <stddev>0.01</stddev>
         </noise>
       </ray>
+      <!-- How to let gazebo interact with things outside gazebo -->
       <plugin name="gazebo_ros_head_hokuyo_controller" filename="libgazebo_ros_laser.so">
         <topicName>/scan</topicName>
         <frameName>lidar</frameName>
