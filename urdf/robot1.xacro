@@ -26,7 +26,7 @@
   <xacro:property name="joint_right_wheel_y" value="${(chassis_size_y/2)+(wheel_length/2)}" />
   <!-- <xacro:property name="joint_right_wheel_z" value="0" /> -->
 
-  <xacro:property name="lidar_x" value="0.1" />
+  <xacro:property name="lidar_x" value="0.275" />
   <xacro:property name="lidar_y" value="0" />
   <xacro:property name="lidar_z" value="0.175" />
 

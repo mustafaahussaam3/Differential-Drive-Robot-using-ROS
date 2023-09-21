@@ -53,17 +53,17 @@
       <pose>0 0 0 0 0 0</pose>
       <visualize>true</visualize>  
       <!-- the update time of the sensor within one second -->
-      <update_rate>10</update_rate>
+      <update_rate>200</update_rate>
       <!-- ray tag specify the parameters for the virtual ray sensor-->
       <ray>
         <!-- Scan -->
         <scan>
           <!-- specifying the way of scan either horizontal or vertical-->
           <horizontal>
-            <samples>360</samples>
+            <samples>720</samples>
             <resolution>1</resolution>
-            <min_angle>-1.570796</min_angle>
-            <max_angle>1.570796</max_angle>
+            <min_angle>-3.14159265359</min_angle>
+            <max_angle>3.14159265359</max_angle>
           </horizontal>
         </scan>
         <!-- Range -->
