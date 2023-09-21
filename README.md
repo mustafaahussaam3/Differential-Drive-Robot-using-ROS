@@ -9,19 +9,26 @@ This project involves simulating a differential drive robot in Gazebo using ROS1
 - Gazebo and RViz used for simulation environment.
 - URDF description for the robot.
 - Gazebo plugins for differential drive and Lidar sensor.
-- Robot navigates in the x-direction.
+- Robot navigates 
 - Obstacle detection using Lidar sensor.
 - Action: When an obstacle is detected within 1 meter, the robot turns left to avoid it.
 
 ## Installation
-1. Install ROS1 on your system (if not already installed).
+1. Install ROS1 on your system (if not already installed) [click Here](https://github.com/mustafaahussaam3/ROS_Tasks/blob/master/Task1/RosInstallation.sh)
 2. Clone this project repository.
-3. Build the project using `catkin_make`.
+3. Build the project using.
+```bash
+$ catkin_make
+$ source devel/setup.bash
+```
 4. Launch the Gazebo simulation with the robot using ROS launch files.
+```bash
+$ roslaunch test myrobo.launch 
+```
 
 ## Usage
 1. Launch the simulation environment.
-2. Observe the robot's movement in the x-direction.
+2. Observe the robot's movement.
 3. The Lidar sensor detects obstacles within a 1-meter range.
 4. When an obstacle is detected, the robot autonomously turns left to avoid it.
 
@@ -31,9 +38,6 @@ Contributions to this project are welcome. You can contribute by:
 - Proposing new features or enhancements.
 - Submitting pull requests.
 
-## License
-This project is licensed under the [MIT License](LICENSE).
-
 ## Contact
-For any questions or inquiries, please contact [Your Name](mailto:your.email@example.com).
+For any questions or inquiries, please contact [Mustafa Hussam Eldin](mustafahussameldin@gmail.com).
 
