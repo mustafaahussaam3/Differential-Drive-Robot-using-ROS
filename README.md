@@ -15,15 +15,33 @@ This project involves simulating a differential drive robot in Gazebo using ROS1
 
 ## Installation
 1. Install ROS1 on your system (if not already installed) [click Here](https://github.com/mustafaahussaam3/ROS_Tasks/blob/master/Task1/RosInstallation.sh)
-2. Clone this project repository.
-3. Build the project using.
+2. Create catkin-ws
 ```bash
-$ catkin_make
-$ source devel/setup.bash
+$mkdir catkin_ws
 ```
-4. Launch the Gazebo simulation with the robot using ROS launch files.
+2. Create src Folder
 ```bash
-$ roslaunch test myrobo.launch 
+$cd catkin_ws
+$mkdir src
+```
+3. Initalize your Catkin Workspace
+```bash
+$cd src
+$catkin_init_workspace
+```
+4. Clone this project repository.
+```bash
+$git clone <clone-the-link-here>
+```
+5. Build the project using.
+```bash
+$cd ..
+$catkin_make
+$source devel/setup.bash
+```
+6. Launch the Gazebo simulation with the robot using ROS launch files.
+```bash
+$roslaunch Differential-Drive-Robot-using-ROS myrobo.launch 
 ```
 
 ## Usage
@@ -39,5 +57,5 @@ Contributions to this project are welcome. You can contribute by:
 - Submitting pull requests.
 
 ## Contact
-For any questions or inquiries, please contact [Mustafa Hussam Eldin](mustafahussameldin@gmail.com).
+For any questions or inquiries, please contact [Mustafa Hussam Eldin](https://www.linkedin.com/in/mustafahussameldin/).
 

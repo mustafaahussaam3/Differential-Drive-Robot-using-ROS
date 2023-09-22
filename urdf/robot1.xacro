@@ -3,7 +3,7 @@
 
   <xacro:include filename="robo_core.xacro" />
   <xacro:include filename="inertial.xacro" />
-  <xacro:include filename="$(find test)/urdf/plugin.gazebo" />
+  <xacro:include filename="$(find Differential-Drive-Robot-using-ROS)/urdf/plugin.gazebo" />
 
   <!-- behind the center of the two drive wheels to make the robot accelerated easier  -->
   <xacro:property name="chassis_x" value="-0.1" /> 
@@ -191,14 +191,14 @@
     <collision>
       <origin xyz="0 0 ${lidar_z_offset}" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="package://test/meshes/hokuyo.dae"/>
+        <mesh filename="package://Differential-Drive-Robot-using-ROS/meshes/hokuyo.dae"/>
       </geometry>
     </collision>
 
     <visual>
         <origin xyz="0 0 ${lidar_z_offset}" rpy="0 0 0"/>
         <geometry>
-        <mesh filename="package://test/meshes/hokuyo.dae"/>
+        <mesh filename="package://Differential-Drive-Robot-using-ROS/meshes/hokuyo.dae"/>
       </geometry>
     </visual>
 
