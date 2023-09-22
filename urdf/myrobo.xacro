@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro"  name="robot1" >
 
-  <xacro:include filename="robo_core.xacro" />
+  <xacro:include filename="colour.xacro" />
   <xacro:include filename="inertial.xacro" />
-  <xacro:include filename="$(find Differential-Drive-Robot-using-ROS)/urdf/plugin.gazebo" />
+  <xacro:include filename="$(find myrobo_description)/urdf/plugin.gazebo" />
 
   <!-- behind the center of the two drive wheels to make the robot accelerated easier  -->
   <xacro:property name="chassis_x" value="-0.1" /> 
@@ -78,9 +78,6 @@
     </xacro:inertial_box>
   </link>
 
-  <gazebo reference = "chassis">
-      <material>Gazebo/Red</material>
-  </gazebo>
 
    <!-- righ wheel-->
 
@@ -109,11 +106,7 @@
     </xacro:inertial_cylinder>
   </link> -->
 
-  <gazebo reference = "right_wheel">
-    <material>Gazebo/Blue</material>
-  </gazebo>
-
-
+  
   <!-- left wheel-->
   <joint name="left_wheel_joint" type="continuous">
     <origin xyz="0 ${joint_right_wheel_y} 0" rpy="${CW*(pi/2)} 0 0.0"/>
@@ -140,9 +133,6 @@
     </xacro:inertial_cylinder>
   </link> -->
 
-  <gazebo reference = "left_wheel">
-    <material>Gazebo/Blue</material>
-  </gazebo>
 
   <!-- caster wheel-->
 
@@ -170,13 +160,7 @@
     </xacro:inertial_sphere>
   </link> 
 
-  <gazebo reference = "caster_link">
-    <material>Gazebo/Silver</material>
-    <!-- gazebo adding the coeffecient of friction -->
-    <mu1 value="0.001" />
-    <mu2 value="0.001" />
 
-  </gazebo>
 
   <!-- lidar -->
   
@@ -186,19 +170,18 @@
     <child link="lidar"/>
   </joint>
 
-
   <link name="lidar">
     <collision>
       <origin xyz="0 0 ${lidar_z_offset}" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="package://Differential-Drive-Robot-using-ROS/meshes/hokuyo.dae"/>
+        <mesh filename="package://myrobo_description/meshes/hokuyo.dae"/>
       </geometry>
     </collision>
 
     <visual>
         <origin xyz="0 0 ${lidar_z_offset}" rpy="0 0 0"/>
         <geometry>
-        <mesh filename="package://Differential-Drive-Robot-using-ROS/meshes/hokuyo.dae"/>
+        <mesh filename="package://myrobo_description/meshes/hokuyo.dae"/>
       </geometry>
     </visual>
 
@@ -209,8 +192,5 @@
     </inertial>
   </link>
 
-  <gazebo reference = "lidar">
-    <material>Gazebo/Black</material>
-  </gazebo>
 
 </robot>

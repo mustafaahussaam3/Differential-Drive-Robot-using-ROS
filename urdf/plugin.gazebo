@@ -1,5 +1,6 @@
 <?xml version="1.0"?>
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="robot1">
+
 <!--   
   <gazebo>
     <plugin name="skid_steer_drive_controller" filename="libgazebo_ros_skid_steer_drive.so">
@@ -86,4 +87,30 @@
       </plugin>
     </sensor>
   </gazebo>
+
+  <gazebo reference = "chassis">
+    <material>Gazebo/Red</material>
+  </gazebo>
+
+  <gazebo reference = "right_wheel">
+    <material>Gazebo/Blue</material>
+  </gazebo>
+
+  <gazebo reference = "left_wheel">
+    <material>Gazebo/Blue</material>
+  </gazebo>
+
+  <gazebo reference = "caster_link">
+    <material>Gazebo/Silver</material>
+    <!-- gazebo adding the coeffecient of friction -->
+    <!-- Hint: if robot jump in case you change the dimensions, increase mu1 and mu2--> 
+    <mu1 value="0.001" />
+    <mu2 value="0.001" />
+  </gazebo>
+
+
+  <gazebo reference = "lidar">
+    <material>Gazebo/Black</material>
+  </gazebo>
+
 </robot>

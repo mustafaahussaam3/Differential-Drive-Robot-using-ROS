@@ -12,9 +12,9 @@ This project involves simulating a differential drive robot in Gazebo using ROS1
 - Robot navigates 
 - Obstacle detection using Lidar sensor.
 - Action: When an obstacle is detected within 1 meter, the robot turns left to avoid it.
-- ![Robot navigates](<Start.png>)
-- ![Obstacle detection using Lidar sensor](<Trying to Detecting Obstacles.png>) ![]( <Detect the Obstacle.png>)
-- ![Action: When an obstacle is detected within 1 meter, the robot turns left to avoid it](<Take an action.png>) ![](<Take Action 2.png>)
+- ![Robot navigates](<images/Start.png>)
+- ![Obstacle detection using Lidar sensor](<images/Trying to Detecting Obstacles.png>) ![]( <images/Detect the Obstacle.png>)
+- ![Action: When an obstacle is detected within 1 meter, the robot turns left to avoid it](<images/Take an action.png>) ![](<images/Take Action 2.png>)
 
 ## Installation
 1. Install ROS1 on your system (if not already installed) [click Here](https://github.com/mustafaahussaam3/ROS_Tasks/blob/master/Task1/RosInstallation.sh)

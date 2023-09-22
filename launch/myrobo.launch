@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <launch>
-  <node name="move_robot_node" pkg="Differential-Drive-Robot-using-ROS" type="robo" output="screen" />  
+  <node name="move_robot_node" pkg="myrobo_description" type="robo" output="screen" />  
     <!-- #type take the exec name in case of c++  -->
 
   <!-- Custom gazebo arguements -->
@@ -13,7 +13,7 @@
   <arg name="debug" default="false"/>
 
    <!-- World File -->
-  <arg name="world_file" default="$(find Differential-Drive-Robot-using-ROS)/worlds/robot1_world.world"/>
+  <arg name="world_file" default="$(find myrobo_description)/worlds/robot1_world.world"/>
 
   <include file="$(find gazebo_ros)/launch/empty_world.launch">
     <arg name="debug" value="$(arg debug)" />
@@ -28,7 +28,7 @@
     <!-- launch gazebo from file pkg gazebo_ros file(gazebo.launch.py) then running our robot using spawn in gazebo pkg and echo from robot_describption
       that the urdf publish on the robot_state_publisher using robot discription topic -->
     <!-- if the file not .xacro file you will need to change command ="$(find<>)/<  > "-->
-  <param command="$(find xacro)/xacro $(find Differential-Drive-Robot-using-ROS)/urdf/robot1.xacro" name="robot_description"/>
+  <param command="$(find xacro)/xacro $(find myrobo_description)/urdf/myrobo.xacro" name="robot_description"/>
   <node args="-param robot_description -urdf -model robot1" name="spawn_urdf" pkg="gazebo_ros" type="spawn_model"/>
   <!-- type spawn model is a file that is reponsible for taking the xacro file and put our robot from it to gazebo -->
   <!-- arg needs in gazebo -parm <topic name> -model <robotname> -->
