@@ -15,18 +15,18 @@ public:
     ROS_INFO("%f", msg -> ranges[719]);
 
 
-    ros::Rate rate(50);
+    ros::Rate rate(100);
     geometry_msgs::Twist vel;
 
-    if(msg -> ranges[360]  > 1.5){
-      vel.linear.x = 0.1;
+    if(msg -> ranges[360]  > 1){
+      vel.linear.x = 0.7;
       vel.angular.z = 0.0;
       pub.publish(vel);
       ROS_INFO("Linear Velocity: %f, Angular Velocity: %f", vel.linear.x, vel.angular.z);
 
     }
 
-   if(msg -> ranges[360] < 1.5 ){
+   if(msg -> ranges[360] < 1 ){
       vel.linear.x = 0.0;
       vel.angular.z = 0.2;
       pub.publish(vel);
@@ -36,7 +36,7 @@ public:
 
    if(msg -> ranges[0] < 1){
       vel.linear.x = 0.0;
-      vel.angular.z = 0.2;
+      vel.angular.z = 0.5;
       pub.publish(vel);
       ROS_INFO("Linear Velocity: %f, Angular Velocity: %f", vel.linear.x, vel.angular.z);
 
@@ -44,14 +44,14 @@ public:
 
    if(msg -> ranges[719] < 1) {
       vel.linear.x = 0.0;
-      vel.angular.z = -0.2;
+      vel.angular.z = -0.5;
       pub.publish(vel);
       ROS_INFO("Linear Velocity: %f, Angular Velocity: %f", vel.linear.x, vel.angular.z);
 
     }
 
     rate.sleep();
-  } 
+    } 
 
 private: 
   ros::NodeHandle nh1;
