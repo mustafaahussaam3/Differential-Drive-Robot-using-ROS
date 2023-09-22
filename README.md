@@ -34,7 +34,7 @@ $ catkin_init_workspace
 ```
 4. Clone this project repository.
 ```bash
-$ git clone https://github.com/mustafaahussaam3/Differential-Drive-Robot-using-ROS.git
+$ git clone https://github.com/mustafaahussaam3/myrobo_description.git
 ```
 5. Build the project using.
 ```bash
@@ -44,7 +44,7 @@ $ source devel/setup.bash
 ```
 6. Launch the Gazebo simulation with the robot using ROS launch files.
 ```bash
-$ roslaunch Differential-Drive-Robot-using-ROS myrobo.launch 
+$ roslaunch myrobo_description myrobo.launch 
 ```
 
 ## Usage
