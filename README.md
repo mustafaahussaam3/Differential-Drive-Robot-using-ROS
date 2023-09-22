@@ -12,21 +12,24 @@ This project involves simulating a differential drive robot in Gazebo using ROS1
 - Robot navigates 
 - Obstacle detection using Lidar sensor.
 - Action: When an obstacle is detected within 1 meter, the robot turns left to avoid it.
+- ![Robot navigates](<Start.png>)
+- ![Obstacle detection using Lidar sensor](<Trying to Detecting Obstacles.png>) ![]( <Detect the Obstacle.png>)
+- ![Action: When an obstacle is detected within 1 meter, the robot turns left to avoid it](<Take an action.png>) ![](<Take Action 2.png>)
 
 ## Installation
 1. Install ROS1 on your system (if not already installed) [click Here](https://github.com/mustafaahussaam3/ROS_Tasks/blob/master/Task1/RosInstallation.sh)
 2. Create catkin-ws
 ```bash
-$mkdir catkin_ws
+$mkdir catkin_ws/
+$cd catkin_ws/
 ```
 2. Create src Folder
 ```bash
-$cd catkin_ws
 $mkdir src
+$cd src
 ```
 3. Initalize your Catkin Workspace
 ```bash
-$cd src
 $catkin_init_workspace
 ```
 4. Clone this project repository.
